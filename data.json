@@ -1,0 +1,35 @@
+
+{
+	'service': [{
+		'id':'1',
+		'type': 'Consulting',
+		'heading': 'How We Solve Problems',
+		'body': 'We solve issues by gathering stakeholders and identifying the weak points within your organizations.'
+		},
+		{
+		'id': '2',
+		'type':'Forensics',
+		'heading': 'Find Out Why',
+		'body': 'Gather information from the very pieces of equipment that may have caused your breach in the first place.'
+		}
+	]
+}
+
+App.About.FIXTURES = [
+{
+	'about': [{
+		'id':'21',
+		'trait':'Integrity',
+		'heading': 'Because truths are our foundation.',
+		'body': 'You will never hear a .....',
+		'list': ['good', 'bad', 'ugly']
+		},
+		{
+		'id':'22',
+		'trait': 'Teamwork',
+		'heading': 'Together we achieve better.',
+		'body': 'Working together with our clients ensures ....',
+		'list': ['great', 'mediocre', 'horrible']
+		}
+	]
+}

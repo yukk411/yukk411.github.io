@@ -1,0 +1,78 @@
+App = Ember.Application.create();
+
+App.ApplicationAdapter = DS.RESTAdapter;
+
+
+
+App.Router.map(function(){
+	this.resource('services', function(){
+		this.resource('service', { path:':service_id'});
+	});
+	this.resource('about');
+	this.resource('contact');
+});
+
+App.ServicesRoute = Ember.Route.extend({
+	model: function() {
+		return this.store.findAll('service');
+	}
+});
+
+App.ServiceRoute = Ember.Route.extend({ //Can delete this.....
+	model: function(params) {
+		return this.store.find('product', params.service_id);
+	}
+});
+
+App.AboutRoute = Ember.Route.extend({
+	model: function() {
+		return this.store.findAll('about');
+	}
+});
+
+App.Service = DS.Model.extend({
+	type: DS.attr('string'),
+	heading: DS.attr('string'),
+	body: DS.attr('string'),
+	image: DS.attr('string')	
+});
+
+App.About = DS.Model.extend({
+	trait: DS.attr(),
+	heading: DS.attr(),
+	body: DS.attr(),
+	list: DS.attr()
+});
+
+App.Service.FIXTURES = [
+{
+	id:'1',
+	type: 'Consulting',
+	heading: 'How We Solve Problems',
+	body: 'We solve issues by gathering stakeholders and identifying the weak points within your organizations.'
+},
+{
+	id: '2',
+	type:'Forensics',
+	heading: 'Find Out Why',
+	body: 'Gather information from the very pieces of equipment that may have caused your breach in the first place.'
+}];
+
+App.About.FIXTURES = [
+{
+	id:'21',
+	trait:'Integrity',
+	heading: 'Because truths are our foundation.',
+	body: 'You will never hear a .....',
+	list: ['good', 'bad', 'ugly']
+},
+{
+	id:'22',
+	trait: 'Teamwork',
+	heading: 'Together we achieve better.',
+	body: 'Working together with our clients ensures ....',
+	list: ['great', 'mediocre', 'horrible']
+
+}];
+
+

@@ -1,0 +1,5 @@
+$(document).ready(function(){
+	$.getJSON('http://0.0.0.0:4000/data.json', function(data) {
+		alert(data);
+	});
+});
