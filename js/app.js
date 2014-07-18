@@ -33,6 +33,7 @@ App.Service = DS.Model.extend({
 	heading: DS.attr(),
 	paraone: DS.attr(),
 	paratwo: DS.attr(),
+	parathree: DS.attr(),
 	listone: DS.attr(),
 	listtwo: DS.attr(),
 	image: DS.attr()
@@ -44,16 +45,18 @@ App.About = DS.Model.extend({
 	image: DS.attr
 });
 
+
 App.Service.FIXTURES = [
 {
 	id:'1',
 	type: 'What',
-	heading: 'Importance of Security',
+	heading: 'Importance of Information Security',
 	paraone: 'As requirements for regulatory compliance and asset protection multiply, deploying and maintaining effective and secure IT infrastructure is critical to survival.',
-	paratwo:'Dynamic Business Developers can equip your organization with sustainable security practices and integrate them in IT Operations and Development processes.  Information security, development and IT operations should be complimentary functions; we can connect the dots to build a efficient and secure IT infrastructure.',
+	paratwo: 'In a perfect world an organization is only one change from a security disaster. Information security needs change management to gain situational awareness of production changes and to influence decisions and outcomes. The combination of the two allows an organization to:', 
+	parathree:'Dynamic Business Developers can equip your organization with sustainable security practices and integrate them in IT Operations and Development processes.  Information security, development and IT operations should be complimentary functions; we can connect the dots to build a efficient and secure IT infrastructure.',
 	listone:'',
-	listtwo:'',
-	image:''
+	listtwo:['Identify operational impact of changes','Check change requests comply with information security requirements, internal policies and industry standards','Gain awareness for risky changes and offer better options','Initiate change requests to address information security risks'],
+	image:'/img/equip.jpg'
 },
 {
 	id: '2',
@@ -62,17 +65,18 @@ App.Service.FIXTURES = [
 	paraone:'Secure and efficient IT Operations require focus on protecting assets critical to business, managing risk by implementing controls and continually integrating information security practices into all facets of the operations. In combination this will help:',
 	paratwo:'High performing IT organizations embrace cultures of change management, causality, planned work and continuous improvement. When these cultures are adopted organizations can see:',
 	listone: ['Safeguard customer data', 'Protect against fraud', 'Protect brand and reputation', 'Maximize revenue through high system availability', 'Safeguard revenue by protecting against errors and malicious activities', 'Ensure timely and accurate reporting'],
-	listtwo: ['Security events are less likely to result in loss events', 'Security breaches are more likely to be detected using automated controls', 'Access breaches are detected more quickly', 'Production systems fail less', 'Releases cause unintended failures less', 'Frequency of emergency change requests is less', 'Frequency of repeat audit findings is less', 'Reduction of unplanned work and firefighting', 'Higher ratio of Servers to System Administrators']
+	listtwo: ['Security events are less likely to result in loss events', 'Security breaches are more likely to be detected using automated controls', 'Access breaches are detected more quickly', 'Production systems fail less', 'Releases cause unintended failures less', 'Frequency of emergency change requests is less', 'Frequency of repeat audit findings is less', 'Reduction of unplanned work and firefighting'],
+	image:'/img/services2.jpg'
 },
 {
 	id: '3',
 	type:'How',
 	heading: 'The Dyn Biz Approach',
-	paraone: 'Our process to get your business on track:',
-	paratwo: 'Ready to get started? Contact us for more information.',
-	listone: ['Integrate security into current operations', 'Identify highest business risks and the reliance on critical IT functions', 'Get stakeholders from Operations team communicating and working together on shared objectives', 'Set measures for review and track long and short term progress'],
-	listtwo: '',
-	image:''
+	paraone: 'Let us help your organization get back on track. Our expertise can get security integrated into your operations, identify business risks and organizational reliance on critical IT functions, nurture the relationship of stakeholders in various business functions to work together on shared objectives and set the organization up for continuous delivery, continuous deployment and continuous integration.',
+	paratwo: 'Ready to get started? Contact us at info@dynbiz.com for more information regarding our services:',
+	listone:'',
+	listtwo:['Security program management, strategy, architecture, policy and metrics implementation','Identity and access management','Vulnerability assessment','Compliance management','Vendor management and technical due diligence' ],
+	image:'/img/approach.jpg'
 }
 ];
 

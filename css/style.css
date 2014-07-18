@@ -1,8 +1,76 @@
 /* Put your CSS here */
 .ember-application {
-    margin: 20px;
+
 }
 
 .active {
 	font-weight:bold;
+}
+
+.navbar {
+	font-size: 1.3em;
+	background-color: #C0C0C0;
+	min-height: 60px;
+	border: none;
+}
+
+.navbar-brand {
+	margin-top: -12px;
+}
+
+/*Move navigation links down from the top of the screen*/
+ul.nav.navbar-nav > li {
+	margin-top: 5px;
+}
+
+/*Change color of navbar links */
+ul.nav.navbar-nav > li > a {
+	color: #FFFFFF;
+}
+
+.jumbotron {
+	background-image: url("/img/hero.jpg");
+	width: auto;
+	min-height: 700px;
+  margin-left: 0px;
+  margin-top: 10px;
+	margin-bottom: -20px;
+  color: #FFFFFF;
+  background-color: #FFFFFF;
+}
+.jumbotron p {
+  font-size: 2em;
+  font-weight: 200;  
+	margin-top: 180px;
+	margin-bottom: -140px;
+
+}
+
+#custom-footer {
+	width: auto;
+	background-color: #C0C0C0;
+	color: #000000;
+}
+
+#custom-footer p {
+	margin-bottom: 0px;
+}
+
+.footerinfo {
+	margin-top: 20px;
+}
+
+#footerpos {
+	text-align: center;
+}
+.footerlinks a {
+	color: #000000;
+}
+.custom-content {
+	margin-top: 50px;
+}
+
+.responsivepic img {
+	width:auto;
+	min-height: 300px;
 }
