@@ -1,6 +1,6 @@
 App = Ember.Application.create();
 
-//App.ApplicationAdapter = DS.FixtureAdapter;
+App.ApplicationAdapter = DS.FixtureAdapter;
 
 App.Router.map(function(){
 	this.resource('services', function(){
@@ -10,35 +10,13 @@ App.Router.map(function(){
 	this.resource('contact');
 });
 
-//App.ServicesRoute = Ember.Route.extend({
-//	model: function() {
-//		return this.store.findAll('service');
-//	}
-//});
-
-//App.ServiceRoute = Ember.Route.extend({ //Can delete this.....
-//	model: function(params) {
-//		return this.store.find('service', params.service_id);
-//	}
-//});
-
 App.ServicesRoute = Ember.Route.extend({
 	model: function() {
-					return $.ajax({
-						type: 'GET',
-						url: '/data.json',
-						success: function(data) {
-							console.log('ajax request made');
-							return data;
-						},
-						error: function(data) {
-							console.log('ajax request failed');
-						}
-					});
+		return this.store.findAll('service');
 	}
 });
 
-App.ServiceRoute = Ember.Route.extend({
+App.ServiceRoute = Ember.Route.extend({ //Can delete this.....
 	model: function(params) {
 		return this.store.find('service', params.service_id);
 	}
@@ -46,15 +24,19 @@ App.ServiceRoute = Ember.Route.extend({
 
 App.AboutRoute = Ember.Route.extend({
 	model: function() {
-					return $.getJSON('http://localhost:4000/data.json');
+		return this.store.findAll('about');
 	}
 });
 
-//App.AboutRoute = Ember.Route.extend({
-//	model: function() {
-//		return this.store.findAll('about');
-//	}
-//});
+App.IndexController = Ember.Controller.extend({
+	jumbotext: 'The ever-changing threat landscape requires IT frameworks that stabilize, secure, manage and improve security.'
+
+});
+
+App.AboutController = Ember.ArrayController.extend({
+	boldtext:'Bringing together the best in people to produce the best in business.',
+	abouttext:'At Dynamic Business Developers we believe in partnering with our clients - in doing so better quality services and products are the result. The actions we take as a company stem from our core values. Our belief is that we can only achieve superior results when we operate under these values.'
+});
 
 App.Service = DS.Model.extend({
 	type: DS.attr(),

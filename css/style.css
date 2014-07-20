@@ -70,7 +70,8 @@ ul.nav.navbar-nav > li > a {
 	margin-top: 50px;
 }
 
-.responsivepic img {
-	width:auto;
-	min-height: 300px;
+.aboutpic {
+	max-width: 1920px;
+	height: auto;
 }
+

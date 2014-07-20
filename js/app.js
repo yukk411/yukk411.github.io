@@ -28,6 +28,50 @@ App.AboutRoute = Ember.Route.extend({
 	}
 });
 
+App.IndexController = Ember.Controller.extend({
+	jumbotext: 'The ever-changing threat landscape requires IT frameworks that stabilize, secure, manage and improve security.'
+
+});
+
+App.AboutController = Ember.ArrayController.extend({
+	boldtext:'Bringing together the best in people to produce the best in business.',
+	abouttext:'At Dynamic Business Developers we believe in partnering with our clients - in doing so better quality services and products are the result. The actions we take as a company stem from our core values. Our belief is that we can only achieve superior results when we operate under these values.'
+});
+
+App.ContactController = Ember.ObjectController.extend({
+	actions: {
+		sendInfo: function() {
+			if(this.get('real') === 7) {			
+				var email = this.store.createRecord('contact',  {
+					name: this.get('name'),
+					email: this.get('email'),
+					message: this.get('message'),
+					dateSent: new Date()
+				});
+				var controller = this;
+			
+			contact.save().then(function(email) {
+				controller.set('name', '');
+				controller.set('email', '');
+				controller.set('message', '');
+				controller.get('model').addObject(email);
+				$('.alert').find('.alert-success').show();
+			});
+			}
+			else {
+				$('.alert').find('.alert-danger').show();
+			}
+		}
+	}
+});
+
+App.Contact = DS.model.extend({
+	name: DS.attr(),
+	email: DS.attr(),
+	message: DS.attr(),
+	dateSent: DS.attr()
+});
+
 App.Service = DS.Model.extend({
 	type: DS.attr(),
 	heading: DS.attr(),
